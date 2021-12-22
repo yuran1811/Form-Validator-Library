@@ -19,6 +19,13 @@ function Validator(formSelector) {
 				? undefined
 				: `Please fill this field as an email address!`;
 		},
+		confirmed(message) {
+			return function (value) {
+				return value === select('#password', formEle).value
+					? undefined
+					: `Please check your ${message || 'input'}`;
+			};
+		},
 		min(minValue) {
 			return function (value) {
 				return value.length >= minValue
@@ -71,6 +78,7 @@ function Validator(formSelector) {
 		rules.forEach((rule) => {
 			let ruleInfo = [];
 			let ruleFunc = validatorRules[rule];
+			if (rule === 'confirmed') ruleFunc = validatorRules[rule]('');
 
 			if (rule.includes(':')) {
 				ruleInfo = rule.split(':');
@@ -78,11 +86,9 @@ function Validator(formSelector) {
 				ruleFunc = validatorRules[rule](ruleInfo[1]);
 			}
 
-			if (Array.isArray(formRules[input.name])) {
+			if (Array.isArray(formRules[input.name]))
 				formRules[input.name].push(ruleFunc);
-			} else {
-				formRules[input.name] = [ruleFunc];
-			}
+			else formRules[input.name] = [ruleFunc];
 		});
 
 		input.onblur = handleValidate;

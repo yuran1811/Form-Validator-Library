@@ -114,3 +114,48 @@ body {
 .spacer {
 	margin-top: 20px;
 }
+
+.info__container {
+	position: relative;
+	font-size: 3rem;
+	margin: auto;
+	width: 80vw;
+	height: 80vh;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+}
+.info__item {
+	position: relative;
+	text-align: center;
+	margin: 1.5rem;
+	width: 100%;
+}
+.info__item > * {
+	margin-top: 1.2rem;
+}
+.info__title {
+	position: relative;
+}
+.info__title::after {
+	content: '';
+	position: absolute;
+	bottom: -0.7rem;
+	left: 0;
+	right: 0;
+	height: 0.6rem;
+	background-color: #1dbfaf;
+	font-weight: bold;
+}
+button {
+	border: 0.6rem solid #1dbfaf;
+	padding: 0.7rem 1rem;
+	border-radius: 2rem;
+	font-size: 3rem;
+	color: #1dbfaf;
+}
+button:active {
+	background-color: #1dbfaf;
+	color: white;
+}

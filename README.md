@@ -1,6 +1,6 @@
 # This Form Validator Library is used to validate the form
 
-## Source code [**here**](assets/main.js)
+## Source code [**here**](assets/yr_validator.js)
 
 ### #1: Get Started
 

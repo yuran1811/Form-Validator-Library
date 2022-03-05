@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Oswald', sans-serif;
+}
+
+html {
+	color: #333;
+	font-size: 62.5%;
+	body {
+		overflow: hidden;
+	}
+}
+
+.main {
+	background: #f1f1f1;
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+
+	.form {
+		margin: auto;
+		width: 36rem;
+		min-height: 10rem;
+		padding: 2.3rem;
+		text-align: center;
+		background: #fff;
+		align-self: center;
+		border-radius: 1.2rem;
+		box-shadow: 0 2px 5px 0 rgba(51, 62, 73, 0.1);
+
+		.heading {
+			font-size: 2.5rem;
+			letter-spacing: 0.3rem;
+		}
+		.desc {
+			margin-top: 7px;
+			color: #636d77;
+			font-size: 1.8rem;
+			text-align: center;
+			line-height: 2.4rem;
+		}
+		.spacer {
+			margin-top: 20px;
+		}
+		.form-group {
+			display: flex;
+			margin-bottom: 0.7rem;
+			flex-direction: column;
+			&.invalid {
+				.form-control {
+					border-color: #f33a58;
+				}
+				.form-message {
+					color: #f33a58;
+				}
+			}
+
+			.form-label,
+			.form-message {
+				text-align: left;
+			}
+			.form-label {
+				padding-bottom: 1rem;
+				line-height: 1.8rem;
+				font-size: 1.7rem;
+				font-weight: 700;
+			}
+			.form-control {
+				height: 4rem;
+				outline: none;
+				padding: 8px 12px;
+				font-size: 1.5rem;
+				border-radius: 3px;
+				border: 1px solid #b3b3b3;
+				&:hover {
+					border-color: #1dbfaf;
+				}
+			}
+			.form-message {
+				padding: 4px 0 0;
+				font-size: 1.5rem;
+				line-height: 1.6rem;
+			}
+		}
+		.form-submit {
+			background-color: transparent;
+			border: 3px solid #1dbfaf;
+			padding: 1rem 1.5rem;
+			margin-top: 12px;
+			font-weight: 600;
+			outline: none;
+			color: #1dbfaf;
+			cursor: pointer;
+			font-size: 2rem;
+			border-radius: 8px;
+			transition: all 0.3s ease;
+			&:hover {
+				background-color: #1dbfaf;
+				color: white;
+			}
+		}
+	}
+	.info {
+		&__container {
+			position: relative;
+			font-size: 3rem;
+			margin: auto;
+			width: 80vw;
+			height: 80vh;
+			display: flex;
+			align-items: center;
+			flex-direction: column;
+			justify-content: center;
+			button {
+				border: 0.6rem solid #1dbfaf;
+				padding: 0.7rem 1rem;
+				border-radius: 2rem;
+				color: #1dbfaf;
+				cursor: pointer;
+				font-size: 3rem;
+				transition: all 0.3s ease;
+				&:active,
+				&:hover {
+					background-color: #1dbfaf;
+					color: white;
+				}
+			}
+		}
+		&__item {
+			position: relative;
+			text-align: center;
+			margin: 1.5rem;
+			width: 100%;
+			& > * {
+				margin-top: 1.2rem;
+			}
+		}
+		&__title {
+			position: relative;
+			&::after {
+				content: '';
+				position: absolute;
+				bottom: -0.7rem;
+				left: 0;
+				right: 0;
+				height: 0.6rem;
+				background-color: #1dbfaf;
+				font-weight: bold;
+			}
+		}
+	}
+}

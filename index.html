@@ -5,15 +5,15 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Form Validator Demo</title>
-		<link rel="stylesheet" href="./assets/style.css" />
+		<link rel="stylesheet" href="./assets/css/style.css" />
 	</head>
 	<body>
 		<div class="main"></div>
 		<script src="./assets/render.js"></script>
 		<script src="./assets/yr_validator.js"></script>
 		<script>
-			let registForm = new Validator('#register-form');
-			registForm.onSubmit = (data) => rerender(data);
+			let registerForm = new Validator('#register-form');
+			registerForm.onSubmit = (data) => rerender(data);
 		</script>
 	</body>
 </html>

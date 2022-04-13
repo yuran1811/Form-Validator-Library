@@ -20,19 +20,22 @@ The form will look like this:
 </form>
 ```
 
-At the end of body, add this code to Validate the form
+Link this library
 
 ```html
-<script src="./assets/yr_validator.js"></script>
-<script>
-	let registForm = new Validator('#your_formID');
-
-	// Use this if you don't want the form submit as default
-	registForm.onSubmit = (data) => console.log(data);
-</script>
+<script src="https://cdn.jsdelivr.net/gh/yuran1811/Form-Validator-Library@main/assets/yr_validator.js"></script>
 ```
 
-**_Note:_** The span with class "form-message" will conatain the error message when the input is not matched the rules
+Importing
+
+```js
+let registForm = new Validator('#your_formID');
+
+// Use this if you don't want the form submit as default
+registForm.onSubmit = (data) => console.log(data);
+```
+
+> **_Note:_** The span tag has class "form-message" contains the error message when the input is not matched the rules
 
 ### #2: Usage
 
@@ -61,7 +64,7 @@ The input rules will include these options:
 <input type="password" rules="confirmed" />
 ```
 
-**_Note:_** to use more option for an input rules, use "|" to split them all
+> **_Note:_** to apply more options for input rules, use "|" to split them all
 
 ```html
 <input type="password" rules="required|min:6" />

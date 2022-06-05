@@ -4,12 +4,12 @@ function Validator(formSelector) {
 
 	const formEle = select(formSelector);
 	if (!formEle) {
-		console.error('Invalid selector. Please check the form selector');
+		console.error('Invalid form selector. Please check the form selector');
 		return {};
 	}
 
-	let formRules = {};
-	let validatorRules = {
+	const formRules = {};
+	const validatorRules = {
 		required(value) {
 			return value ? undefined : `Please fill this field!`;
 		},
@@ -105,8 +105,8 @@ function Validator(formSelector) {
 
 		if (isValid) {
 			if (typeof this.onSubmit === 'function') {
-				let enableInputs = selectAll('[name]', formEle);
-				let values = [...enableInputs].reduce((values, input) => {
+				const enableInputs = selectAll('[name]', formEle);
+				const values = [...enableInputs].reduce((values, input) => {
 					switch (input.type) {
 						case 'radio':
 							values[input.name] = select(
@@ -119,9 +119,9 @@ function Validator(formSelector) {
 								values[input.name] = '';
 								return values;
 							}
-							if (!Array.isArray(values[input.name])) {
+
+							if (!Array.isArray(values[input.name]))
 								values[input.name] = [];
-							}
 							values[input.name].push(input.value);
 							break;
 						case 'file':
@@ -130,8 +130,10 @@ function Validator(formSelector) {
 						default:
 							values[input.name] = input.value;
 					}
+
 					return values;
 				}, {});
+
 				this.onSubmit(values);
 			} else formEle.submit();
 		}

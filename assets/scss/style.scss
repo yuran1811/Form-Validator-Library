@@ -8,26 +8,31 @@
 }
 
 html {
-	color: #333;
 	font-size: 62.5%;
-	body {
-		overflow: hidden;
-	}
+	color: #333;
+}
+
+body {
+	overflow: hidden;
 }
 
 .main {
+	position: relative;
+	height: 100vh;
+	overflow: hidden auto;
 	background: #f1f1f1;
-	min-height: 100vh;
 	display: flex;
 	justify-content: center;
 
 	.form {
-		margin: auto;
+		position: relative;
+		overflow: hidden auto;
 		width: 36rem;
-		min-height: 10rem;
+		height: 90%;
+		margin: auto;
 		padding: 2.3rem;
-		text-align: center;
 		background: #fff;
+		text-align: center;
 		align-self: center;
 		border-radius: 1.2rem;
 		box-shadow: 0 2px 5px 0 rgba(51, 62, 73, 0.1);
@@ -50,6 +55,7 @@ html {
 			display: flex;
 			margin-bottom: 0.7rem;
 			flex-direction: column;
+
 			&.invalid {
 				.form-control {
 					border-color: #f33a58;
@@ -87,15 +93,15 @@ html {
 			}
 		}
 		.form-submit {
+			cursor: pointer;
 			background-color: transparent;
 			border: 3px solid #1dbfaf;
 			padding: 1rem 1.5rem;
 			margin-top: 12px;
 			font-weight: 600;
+			font-size: 2rem;
 			outline: none;
 			color: #1dbfaf;
-			cursor: pointer;
-			font-size: 2rem;
 			border-radius: 8px;
 			transition: all 0.3s ease;
 			&:hover {
@@ -115,12 +121,13 @@ html {
 			align-items: center;
 			flex-direction: column;
 			justify-content: center;
+
 			button {
+				cursor: pointer;
 				border: 0.6rem solid #1dbfaf;
 				padding: 0.7rem 1rem;
 				border-radius: 2rem;
 				color: #1dbfaf;
-				cursor: pointer;
 				font-size: 3rem;
 				transition: all 0.3s ease;
 				&:active,
@@ -135,6 +142,7 @@ html {
 			text-align: center;
 			margin: 1.5rem;
 			width: 100%;
+
 			& > * {
 				margin-top: 1.2rem;
 			}

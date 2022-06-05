@@ -8,23 +8,22 @@ const rerender = (data) => {
 	localStorage.setItem('data', JSON.stringify(data));
 
 	const html = `
-		<div class="info__container">
-			<div class="info__item info__name">
-				<span class="info__title">Your name:</span>
-				<div class="info__data">${data.fullname}</div>
-			</div>
-			<div class="info__item info__email">
-				<span class="info__title">Your email:</span>
-				<div class="info__data">${data.email}</div>
-			</div>
-			<div class="info__item info__password">
-				<span class="info__title">Your password:</span>
-				<div class="info__data">${data.password}</div>
-			</div>
-
-			<button>Clear Data</button>
+	<div class="info__container">
+		<div class="info__item info__name">
+			<span class="info__title">Your name:</span>
+			<div class="info__data">${data.fullname}</div>
 		</div>
-	`;
+		<div class="info__item info__email">
+			<span class="info__title">Your email:</span>
+			<div class="info__data">${data.email}</div>
+		</div>
+		<div class="info__item info__password">
+			<span class="info__title">Your password:</span>
+			<div class="info__data">${data.password}</div>
+		</div>
+
+		<button>Clear Data</button>
+	</div>`;
 	main.innerHTML = html;
 
 	const clearBtn = $('button');
@@ -40,7 +39,7 @@ const render = () => {
 		action: '',
 
 		heading: 'SIGN UP',
-		description: 'Have Great Time With Us!!!',
+		description: 'Demo usage of Validator lib',
 		elements: [
 			{
 				name: 'Full name',
@@ -74,8 +73,9 @@ const render = () => {
 		submitTitle: 'Sign Up',
 	};
 
-	const eleHTML = form1.elements.map(
-		(item) => `
+	const eleHTML = form1.elements
+		.map(
+			(item) => `
 		<div class="form-group">
 			<label for="${item.id}" class="form-label">${item.name}</label>
 			<input
@@ -88,7 +88,8 @@ const render = () => {
 			/>
 			<span class="form-message"></span>
 		</div>`
-	);
+		)
+		.join('');
 	const htmls = `
 	<form action="" method="${form1.method}" class="form" id="${form1.name}">
 		<h3 class="heading">${form1.heading}</h3>

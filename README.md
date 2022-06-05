@@ -2,7 +2,7 @@
 
 ## Source code [**here**](assets/yr_validator.js)
 
-### #1: Get Started
+### #1: Getting Started
 
 The form will look like this:
 

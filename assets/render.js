@@ -5,9 +5,9 @@ const main = $('.main');
 const DATA_FROM_LOCAL = JSON.parse(localStorage.getItem('data'));
 
 const rerender = (data) => {
-	localStorage.setItem('data', JSON.stringify(data));
+  localStorage.setItem('data', JSON.stringify(data));
 
-	const html = `
+  const html = `
 	<div class="info__container">
 		<div class="info__item info__name">
 			<span class="info__title">Your name:</span>
@@ -24,58 +24,58 @@ const rerender = (data) => {
 
 		<button>Clear Data</button>
 	</div>`;
-	main.innerHTML = html;
+  main.innerHTML = html;
 
-	const clearBtn = $('button');
-	clearBtn.onclick = () => {
-		localStorage.clear();
-		render();
-	};
+  const clearBtn = $('button');
+  clearBtn.onclick = () => {
+    localStorage.clear();
+    render();
+  };
 };
 const render = () => {
-	const form1 = {
-		name: 'register-form',
-		method: 'POST',
-		action: '',
+  const form1 = {
+    name: 'register-form',
+    method: 'POST',
+    action: '',
 
-		heading: 'SIGN UP',
-		description: 'Demo usage of Validator lib',
-		elements: [
-			{
-				name: 'Full name',
-				id: 'fullname',
-				type: 'text',
-				placeholder: 'Ex: Yuran',
-				rules: 'required',
-			},
-			{
-				name: 'Email',
-				id: 'email',
-				type: 'text',
-				placeholder: 'Ex: email@domain.com',
-				rules: 'required|email',
-			},
-			{
-				name: 'Password',
-				id: 'password',
-				type: 'password',
-				placeholder: 'Type your password',
-				rules: 'required|min:6',
-			},
-			{
-				name: 'Confirm your password',
-				id: 'password_confirmation"',
-				type: 'password',
-				placeholder: 'Confirm your password',
-				rules: 'required|confirmed',
-			},
-		],
-		submitTitle: 'Sign Up',
-	};
+    heading: 'SIGN UP',
+    description: 'Demo usage of Validator lib',
+    elements: [
+      {
+        name: 'Full name',
+        id: 'fullname',
+        type: 'text',
+        placeholder: 'Ex: Yuran',
+        rules: 'required',
+      },
+      {
+        name: 'Email',
+        id: 'email',
+        type: 'text',
+        placeholder: 'Ex: email@domain.com',
+        rules: 'required|email',
+      },
+      {
+        name: 'Password',
+        id: 'password',
+        type: 'password',
+        placeholder: 'Type your password',
+        rules: 'required|min:6',
+      },
+      {
+        name: 'Confirm your password',
+        id: 'password_confirmation"',
+        type: 'password',
+        placeholder: 'Confirm your password',
+        rules: 'required|confirmed',
+      },
+    ],
+    submitTitle: 'Sign Up',
+  };
 
-	const eleHTML = form1.elements
-		.map(
-			(item) => `
+  const eleHTML = form1.elements
+    .map(
+      (item) => `
 		<div class="form-group">
 			<label for="${item.id}" class="form-label">${item.name}</label>
 			<input
@@ -88,9 +88,9 @@ const render = () => {
 			/>
 			<span class="form-message"></span>
 		</div>`
-		)
-		.join('');
-	const htmls = `
+    )
+    .join('');
+  const htmls = `
 	<form action="" method="${form1.method}" class="form" id="${form1.name}">
 		<h3 class="heading">${form1.heading}</h3>
 		<p class="desc">${form1.description}</p>
@@ -98,7 +98,7 @@ const render = () => {
 		${eleHTML}
 		<button class="form-submit">${form1.submitTitle}</button>
 	</form>`;
-	main.innerHTML = htmls;
+  main.innerHTML = htmls;
 };
 
 if (DATA_FROM_LOCAL) rerender(DATA_FROM_LOCAL);
